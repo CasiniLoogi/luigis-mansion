@@ -203,6 +203,11 @@ cflags_base = [
     f"-DVERSION_{config.version}",
 ]
 
+cflags_game = [
+    *cflags_base,
+    "-RTTI on"
+]
+
 # Debug flags
 if args.debug:
     # Or -sym dwarf-2 for Wii compilers
@@ -227,7 +232,7 @@ cflags_rel = [
     "-sdata2 0",
 ]
 
-config.linker_version = "GC/1.3.2"
+config.linker_version = "GC/1.1"
 
 
 # Helper function for Dolphin libraries
@@ -265,6 +270,22 @@ def MatchingFor(*versions):
 config.warn_missing_config = True
 config.warn_missing_source = False
 config.libs = [
+    {
+        "lib": "Game",
+        "mw_version": config.linker_version,
+        "cflags": cflags_game,
+        "objects": [
+            Object(NonMatching, "Unsorted/MoveObj.cpp"),
+            Object(NonMatching, "Unsorted/Character.cpp"),
+            Object(Matching, "Sato/EnemyStrategy.cpp"),
+            Object(NonMatching, "Unsorted/IncludeStrategy.cpp"),
+            Object(NonMatching, "Sato/EnStrategy.cpp"),
+            Object(NonMatching, "Sato/EnemyTypicalStrategy.cpp"),
+            Object(NonMatching, "Sotoike/AITurara.cpp"),
+            Object(Matching, "Koga/CharacterEventObserver.cpp"),
+            Object(NonMatching, "hvqm4dec/hvqm4dec.c"),
+        ],
+    },
     {
         "lib": "Runtime.PPCEABI.H",
         "mw_version": config.linker_version,
