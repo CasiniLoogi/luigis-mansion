@@ -29,7 +29,10 @@ from tools.project import (
 # Game versions
 DEFAULT_VERSION = 0
 VERSIONS = [
-    "GLME01",  # 0
+    "GLME01",       # USA 1.00
+    "GLMP01",       # PAL 1.00
+    "GLMP01_01",    # Pal 1.01
+    "GLMJ01",       # JAPAN 1.00
 ]
 
 parser = argparse.ArgumentParser()

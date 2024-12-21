@@ -38,6 +38,9 @@ This repository does **not** contain any game assets or assembly whatsoever. An 
 Supported versions:
 
 - `GLME01`: Rev 0 (USA)
+- `GLMP01`: Rev 0 (PAL)
+- `GLMP01_01`: Rev 1 (PAL)
+- `GLMJ01`: Rev 0 (JAPAN)
 
 Dependencies
 ============
