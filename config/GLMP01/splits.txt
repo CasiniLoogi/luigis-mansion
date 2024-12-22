@@ -11,3 +11,15 @@ Sections:
 	.sdata      type:data align:16
 	.sbss       type:bss align:32
 	.sdata2     type:rodata align:32
+
+Unsorted/MoveObj.cpp:
+	.text       start:0x8006A518 end:0x8006BC40
+
+hvqm4dec/hvqm4dec.c:
+	.text       start:0x801FF5C0 end:0x80205068
+
+Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
+	.text       start:0x80207630 end:0x802076AC
+	.ctors      start:0x80210AA0 end:0x80210AA4
+	.dtors      start:0x80210DC0 end:0x80210DC8
+	.sdata      start:0x804C5668 end:0x804C5670
